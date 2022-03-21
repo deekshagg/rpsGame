@@ -1,0 +1,30 @@
+RPS
+
+api/v1/rps/start
+Obj -> name, country
+Game Start:
+- [ ] Generate Game ID and Player ID
+- [ ] Return Game ID and Player ID, name , country
+- [ ] Implement using a table
+
+api/v1/rps/join/
+Obj -> name, country, gid
+Join a Player:
+- [ ] Generate Player ID
+- [ ] Add Player table
+- [ ] Return player ID, name, country
+
+Api/v1/rps/play/{gid}/{pid}/{choice}
+Play a Game:
+- [ ] Logic of game
+- [ ] return the result
+
+
+User Table:
+Id,		Name,		Country
+1		DIKSHA		IND
+2		MAYANK		IND
+
+Room Table:
+gid,		p1id,		p2id
+1		1		2

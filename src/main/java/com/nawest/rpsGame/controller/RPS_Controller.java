@@ -29,4 +29,8 @@ public class RPS_Controller {
     public String runGame(@RequestBody final PlayGame playGame) {
         return rps_service.runGame(playGame);
     }
+
+//    @GetMapping("/play/new/{gid}")
+//    public String newGame(@RequestBody final )
+
 }
