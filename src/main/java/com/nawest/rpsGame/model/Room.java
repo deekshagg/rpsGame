@@ -11,9 +11,9 @@ public class Room {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long rid;
-
     private Long p1id;
     private Long p2id;
+    private String winner;
 
     public Room() {
     }
@@ -40,5 +40,13 @@ public class Room {
 
     public void setP2id(Long p2id) {
         this.p2id = p2id;
+    }
+
+    public String getWinner() {
+        return winner;
+    }
+
+    public void setWinner(String winner) {
+        this.winner = winner;
     }
 }

@@ -77,31 +77,32 @@ public class RPS_Service {
         Player player2 = playerRepository.getById(p2id);
         // 1. draw
         if(value1 == value2 ) {
-            return "Draw";
+            return setGameWinner("Draw", playGame);
         }
         // 2. Paper and Rock
         else if(value1 == 1 && value2 == 0) {
-            return player1.getName() + " Wins";
+            roomRepository.getById(gid).setWinner("Draw");
+            return setGameWinner(player1.getName() + " Wins", playGame);
         }
         // 3. Scissor and Rock
         else if(value1 == 2 && value2 == 0) {
-            return player2.getName() + " Wins";
+            return setGameWinner(player2.getName() + " Wins", playGame);
         }
         // 4. Rock and Paper
         else if(value1 == 0 && value2 == 1) {
-            return player2.getName() + " Wins";
+            return setGameWinner(player2.getName() + " Wins", playGame);
         }
         // 5. Rock and Scissor
         else if(value1 == 0 && value2 == 2) {
-            return player1.getName() + " Wins";
+            return setGameWinner(player1.getName() + " Wins", playGame);
         }
         // 6. Paper and Scissor
         else if(value1 == 1 && value2 == 2) {
-            return player2.getName() + " Wins";
+            return setGameWinner(player2.getName() + " Wins", playGame);
         }
         // 7. Scissor and Paper
         else {
-            return player1.getName() + " Wins";
+            return setGameWinner(player1.getName() + " Wins", playGame);
         }
 
     }
@@ -110,5 +111,12 @@ public class RPS_Service {
         if(choice.equals("rock")) return 0;
         else if(choice.equals("paper")) return 1;
         else return 2;
+    }
+    private String setGameWinner(String result, PlayGame playGame) {
+        long gid = playGame.gid;
+        Room room = roomRepository.getById(gid);
+        room.setWinner(result);
+        roomRepository.save(room);
+        return result;
     }
 }

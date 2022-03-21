@@ -34,5 +34,5 @@ Room Table:
 // gid - game id 
 // player 1 id 
 // player 2 id
-gid,		p1id,	p2id
-1		1		2
+gid,		p1id,	p2id        winner
+1		    1		  2         2
