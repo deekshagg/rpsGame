@@ -1,5 +1,8 @@
-RPS
+I would like to introduce:
 
+RPS System Design:
+
+APIs: 
 api/v1/rps/start
 Obj -> name, country
 Game Start:
@@ -14,17 +17,22 @@ Join a Player:
 - [ ] Add Player table
 - [ ] Return player ID, name, country
 
-Api/v1/rps/play/{gid}/{pid}/{choice}
+Api/v1/rps/play
 Play a Game:
 - [ ] Logic of game
 - [ ] return the result
 
 
 User Table:
+like-
 Id,		Name,		Country
 1		DIKSHA		IND
 2		MAYANK		IND
 
+like-
 Room Table:
-gid,		p1id,		p2id
+// gid - game id 
+// player 1 id 
+// player 2 id
+gid,		p1id,	p2id
 1		1		2
